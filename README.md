@@ -10,6 +10,6 @@ The script is great, fancy and easy to use. However, due to it's simplicity, it 
 More on: http://richardfu.net
 
 
-14-09-25
--Added success/error count note
--Added JavaScipt alert on failed files, while on click error count
+14-09-25:
+Added success/error count note
+Added JavaScipt alert on failed files, while on click error count
