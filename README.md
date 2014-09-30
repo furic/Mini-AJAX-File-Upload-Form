@@ -12,7 +12,7 @@ More on: http://richardfu.net/mini-ajax-file-upload-form-ajax-multiplie-files-up
 <br />
 14-09-25:
 <ul>
-<li>Added success/error count note</li>
+<li>Added success/fail count note</li>
 <li>Added JavaScipt alert on failed files, while on click error count</li>
 </ul>
 
