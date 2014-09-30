@@ -5,7 +5,7 @@ Modification for "Mini AJAX File Upload Form". This JQuery script allow visitors
 
 A brief usage tutorial can be found here: http://tutorialzine.com/2013/05/mini-ajax-file-upload-form/
 
-The script is great, fancy and easy to use. However, it only show if the files are <b>uploaded</b> succeed but not if the files are <b>handled</b> (e.g. filter the file-type, record them in database, etc). Especially when uploading 100+ files you will entered a dilemma without knowing which file have been successfully handled. Therefore this modification has been made.
+The script is great, fancy and easy to use. However, it only show if the files are <b>uploaded</b> successfully but not if the files are <b>handled</b> (e.g. filter the file-type, record them in database, etc). Especially when uploading 100+ files you will entered a dilemma without knowing which file have been successfully handled. Therefore this modification has been made.
 
 More on: http://richardfu.net/mini-ajax-file-upload-form-ajax-multiplie-files-upload/
 
