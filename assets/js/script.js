@@ -50,7 +50,6 @@ $(function(){
             });
 
             // Automatically upload the file once it is added to the queue
-            //var jqXHR = data.submit();
 						var jqXHR = data.submit().success(function(result, textStatus, jqXHR){
 						
 							var json = JSON.parse(result);
@@ -60,12 +59,13 @@ $(function(){
 								data.context.addClass('error');
 								numUploadError++;
 								failedFiles.push(data.files[0].name);
+								datas.push(data);
 							}else{
 								numUploadSuccess++;	
 							}
 							
-              if($('#note').length)
-              	$('#note').html('<span>' + numUploadSuccess + '</span> successfully uploaded.<br /><span id="note-error">' + numUploadError + '</span> failed uploaded.' + (numUploadError > 0 ? ' <a href="#" id="btn-retry"> (Retry all)</a>' : ''));
+							if($('#note').length)
+							  $('#note').html('<span>' + numUploadSuccess + '</span> successfully uploaded.<br /><span id="note-error">' + numUploadError + '</span> failed uploaded.' + (numUploadError > 0 ? ' <a href="#" id="btn-retry"> (Retry all)</a>' : ''));
 						
 							setTimeout(function(){
 								data.context.fadeOut('slow');
@@ -102,20 +102,22 @@ $(function(){
     
     // Show the upload failed files
     $(document).on('click', '#note-error', function () {
-    	  if(numUploadError>0)
+    	  if(failedFiles.length > 0)
         	alert(failedFiles.join("\n"));
     });
 	
+    // Retry all fails
     $(document).on('click', '#btn-retry', function (e) {
-    	e.preventDefault();
-    	failedFiles.length = 0;
-    	numUploadError = 0;
-    	if($('#note').length) $('#note').html('');
-    	var datasClone = datas.slice();
-    	datas.length = 0;
-    	$.each(datasClone, function(){
-    		$('#upload').fileupload('add', this);
-    	});
+    	  e.preventDefault();
+    	  failedFiles.length = 0;
+    	  numUploadError = 0;
+    	  if($('#note').length)
+    	      $('#note').html('');
+    	  var datasClone = datas.slice();
+    	  datas.length = 0;
+    	  $.each(datasClone, function() {
+      		  $('#upload').fileupload('add', this);
+    	  });
     });
     
     // Helper function that formats the file sizes
