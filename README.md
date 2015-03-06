@@ -10,6 +10,10 @@ The script is great, fancy and easy to use. However, it only show if the files a
 More on: http://richardfu.net/mini-ajax-file-upload-form-ajax-multiplie-files-upload/
 
 <br />
+15-03-06:
+<ul>
+<li>Added a "Retry all" button to re-upload all failed files</li>
+</ul>
 14-09-25:
 <ul>
 <li>Added success/fail count note</li>

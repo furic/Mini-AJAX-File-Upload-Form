@@ -1,8 +1,9 @@
 $(function(){
 
-		var numUploadSuccess = 0;
-		var numUploadError = 0;
-		var failedFiles = [];
+    var numUploadSuccess = 0;
+    var numUploadError = 0;
+    var failedFiles = [];
+    var datas = [];
 
     var ul = $('#upload ul');
 
@@ -64,7 +65,7 @@ $(function(){
 							}
 							
               if($('#note').length)
-              	$('#note').html('<span>' + numUploadSuccess + '</span> successfully uploaded.<br /><span id="note-error">' + numUploadError + '</span> failed uploaded.');
+              	$('#note').html('<span>' + numUploadSuccess + '</span> successfully uploaded.<br /><span id="note-error">' + numUploadError + '</span> failed uploaded.' + (numUploadError > 0 ? ' <a href="#" id="btn-retry"> (Retry all)</a>' : ''));
 						
 							setTimeout(function(){
 								data.context.fadeOut('slow');
@@ -103,6 +104,18 @@ $(function(){
     $(document).on('click', '#note-error', function () {
     	  if(numUploadError>0)
         	alert(failedFiles.join("\n"));
+    });
+	
+    $(document).on('click', '#btn-retry', function (e) {
+    	e.preventDefault();
+    	failedFiles.length = 0;
+    	numUploadError = 0;
+    	if($('#note').length) $('#note').html('');
+    	var datasClone = datas.slice();
+    	datas.length = 0;
+    	$.each(datasClone, function(){
+    		$('#upload').fileupload('add', this);
+    	});
     });
     
     // Helper function that formats the file sizes

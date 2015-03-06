@@ -170,7 +170,7 @@ section, footer, header, aside{
     color: red;
 }
 
-#note{
+#note, #note a{
     color: #7f858a;
 }
 
