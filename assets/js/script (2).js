@@ -105,10 +105,9 @@ $(function(){
     
     // Show the upload failed files
     $(document).on('click', '#note-error', function (e) {
-        if(failedFiles.length > 0)
-            alert(failedFiles.join("\n"));
+        alert(failedFiles.join("\n"));
     });
-	
+    
     // Retry all fails
     $(document).on('click', '#btn-retry', function (e) {
     	  e.preventDefault();
@@ -125,7 +124,6 @@ $(function(){
     	  });
     });
     
-    // Update the note
     function updateNote() {
     	if($('#note').length)
 			  $('#note').html('<span>' + numSuccess + '</span> successfully uploaded.<br /><span id="note-error">' + numError + '</span> failed uploaded.' + (numError > 0 ? ' <a href="#" id="btn-retry"> (Retry all)</a>' : ''));
