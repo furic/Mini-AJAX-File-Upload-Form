@@ -9,10 +9,13 @@ The script is great, fancy and easy to use. However, it only show if the files a
 
 15-03-06:
 - Added a "Retry all" button to re-upload all failed files
+
 ![Fail Retry All Screenshot](03_fail_retry_all.png)
+
 14-09-25:
 - Added success/fail count note
 - Added JavaScipt alert on failed files, while on click error count
+
 ![Feedback Note Screenshot](01_feedback_note.png)
 ![Fail Files Screenshot](02_fail_files.png)
 
